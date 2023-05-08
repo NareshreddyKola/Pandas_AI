@@ -17,3 +17,5 @@ pandas_ai = PandasAI(llm, verbose=True, conversational=False)
 pandas_ai = PandasAI(llm)
 response = pandas_ai.run(df, prompt='Which are the 5 happiest countries?')
 print(response)
+
+
