@@ -28,8 +28,15 @@ def natural_language_to_sql(query):
 
 # Create a function that takes a SQL query and returns the results
 def sql_to_results(query):
-    # Connect to the Oracle database
-    connection = cx_Oracle.connect("user/password@localhost/sid")
+    # Connect to the Snowflake database
+    connection = snowflake.connector.connect(
+        user="user",
+        password="password",
+        account="account",
+        warehouse="warehouse",
+        database="database",
+        role="role",
+    )
 
     # Execute the SQL query
     cursor = connection.cursor()
@@ -56,3 +63,7 @@ results = sql_to_results(sql_query)
 # Print the results
 for result in results:
     print(result)
+
+
+
+This code is just a simple example, and there are many ways to improve it. For example, you could use a more sophisticated natural language processing model to generate more accurate SQL queries. You could also use a more powerful database engine to handle more complex queries.
